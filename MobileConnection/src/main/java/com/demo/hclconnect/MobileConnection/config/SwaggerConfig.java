@@ -32,7 +32,7 @@ public class SwaggerConfig {
 				.tags(new Tag("finance","Finance Related API")
 						)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.tecnotree.dcbs"))
+				.apis(RequestHandlerSelectors.basePackage("com.demo.hclconnect.MobileConnection"))
 				.paths(PathSelectors.regex("/.*"))
 				.build()
 				.apiInfo(apiEndPointsInfo())
