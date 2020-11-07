@@ -3,6 +3,8 @@
  */
 package com.demo.hclconnect.MobileNewRequestDTO;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /**
  * @author JhaA
  *
@@ -17,7 +19,9 @@ public class EMobileNewRequestDTO {
 	private String planCode;
 	private String status;
 	private String RequestId;
-	private String documentFile;
+	private MultipartFile documentFile;
+
+
 	public String getIrstName() {
 		return irstName;
 	}
@@ -66,13 +70,12 @@ public class EMobileNewRequestDTO {
 	public void setRequestId(String requestId) {
 		RequestId = requestId;
 	}
-	public String getDocumentFile() {
+	public MultipartFile getDocumentFile() {
 		return documentFile;
 	}
-	public void setDocumentFile(String documentFile) {
+	public void setDocumentFile(MultipartFile documentFile) {
 		this.documentFile = documentFile;
 	}
-	
 	
 }
 
