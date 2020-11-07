@@ -69,8 +69,8 @@ public class SwaggerConfig {
 				new SecurityReference("Authorization", authorizationScopes));
 	}
 	private ApiInfo apiEndPointsInfo() {
-		return new ApiInfoBuilder().title("DCBS Collections REST API")
-				.description("API's for Communicating with DCBS Collections Module")
+		return new ApiInfoBuilder().title("HCL Mobile Connection REST API")
+				.description("API's for Communicating with HCL Mobile Connection Module")
 				.version("1.0.0")
 				.build();
 	}	
