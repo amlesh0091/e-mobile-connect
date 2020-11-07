@@ -5,10 +5,16 @@ package com.demo.hclconnect.MobileNewRequestDTO;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author JhaA
  *
  */
+
+@Getter
+@Setter
 public class EMobileNewRequestDTO {
 
 	private String irstName;
@@ -22,60 +28,6 @@ public class EMobileNewRequestDTO {
 	private MultipartFile documentFile;
 
 
-	public String getIrstName() {
-		return irstName;
-	}
-	public void setIrstName(String irstName) {
-		this.irstName = irstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public int getRefMobileNumber() {
-		return refMobileNumber;
-	}
-	public void setRefMobileNumber(int refMobileNumber) {
-		this.refMobileNumber = refMobileNumber;
-	}
-	public String getEmailId() {
-		return emailId;
-	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-	public String getGovtId() {
-		return govtId;
-	}
-	public void setGovtId(String govtId) {
-		this.govtId = govtId;
-	}
-	public String getPlanCode() {
-		return planCode;
-	}
-	public void setPlanCode(String planCode) {
-		this.planCode = planCode;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getRequestId() {
-		return RequestId;
-	}
-	public void setRequestId(String requestId) {
-		RequestId = requestId;
-	}
-	public MultipartFile getDocumentFile() {
-		return documentFile;
-	}
-	public void setDocumentFile(MultipartFile documentFile) {
-		this.documentFile = documentFile;
-	}
 	
 }
 

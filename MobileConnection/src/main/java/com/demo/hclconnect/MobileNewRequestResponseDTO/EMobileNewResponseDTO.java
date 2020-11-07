@@ -3,21 +3,18 @@
  */
 package com.demo.hclconnect.MobileNewRequestResponseDTO;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author JhaA
  *
  */
+@Getter
+@Setter
 public class EMobileNewResponseDTO {
 
 	private String newRequestResponseDTO;
-
-	public String getNewRequestResponseDTO() {
-		return newRequestResponseDTO;
-	}
-
-	public void setNewRequestResponseDTO(String newRequestResponseDTO) {
-		this.newRequestResponseDTO = newRequestResponseDTO;
-	}
 			
 }
 
