@@ -63,7 +63,11 @@
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
-		
+			<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		
 	</dependencies>
 
@@ -75,7 +79,17 @@
 				<executions>
 					<execution>
 						<phase>package</phase>
-						<configuration>
+						<configuration>			
+						                         <artifactItems>
+	                                        <artifactItem>
+	                                              <groupId>org.projectlombok</groupId>
+	                                              <artifactId>lombok</artifactId>
+	                                              <overWrite>false</overWrite>
+	                                       		  <outputDirectory>${project.build.directory}/dependencies</outputDirectory>
+	                                              <destFileName>lombok.jar</destFileName>
+	                                        </artifactItem>
+	                                 </artifactItems>
+	        
 							<classifier>hcl-mobileconnect</classifier>
 							<finalName>mobileconnect</finalName>
 							<mainClass>com.demo.hclconnect.MobileConnection.HclMobileConnectionApplication</mainClass>
