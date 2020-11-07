@@ -32,7 +32,7 @@ public class SwaggerConfig {
 				.tags(new Tag("finance","Finance Related API")
 						)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.tecnotree.dcbs"))
+				.apis(RequestHandlerSelectors.basePackage("com.demo.hclconnect.MobileConnection"))
 				.paths(PathSelectors.regex("/.*"))
 				.build()
 				.apiInfo(apiEndPointsInfo())
@@ -69,8 +69,8 @@ public class SwaggerConfig {
 				new SecurityReference("Authorization", authorizationScopes));
 	}
 	private ApiInfo apiEndPointsInfo() {
-		return new ApiInfoBuilder().title("DCBS Collections REST API")
-				.description("API's for Communicating with DCBS Collections Module")
+		return new ApiInfoBuilder().title("HCL Mobile Connection REST API")
+				.description("API's for Communicating with HCL Mobile Connection Module")
 				.version("1.0.0")
 				.build();
 	}	
