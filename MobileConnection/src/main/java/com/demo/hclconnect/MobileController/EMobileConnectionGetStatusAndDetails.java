@@ -3,6 +3,9 @@
  */
 package com.demo.hclconnect.MobileController;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.hclconnect.MobileEMobileException.InvalidInputException;
+import com.demo.hclconnect.MobileEMobileService.EmobileService;
 import com.demo.hclconnect.MobileNewRequestResponseDTO.EMobileResponseDetailsDTO;
-import com.haufe.agilehats.projects.beans.ProjectResponseDto;
-import com.haufe.agilehats.projects.enums.ResponseEnum;
-import com.haufe.agilehats.projects.exception.InvalidInputException;
 
 /**
  * @author JhaA
@@ -35,20 +37,23 @@ import com.haufe.agilehats.projects.exception.InvalidInputException;
 @RestController
 @RequestMapping("/GetEMobileConnection")
 public class EMobileConnectionGetStatusAndDetails {
+	private static final String STATUS_CODE = " status code ";
 
-	/*@GetMapping
-	public ResponseEntity<EMobileResponseDetailsDTO> getProject(@RequestParam("requestId") Integer requestId)
-			throws InvalidInputException {
+	private static final Logger logger = LoggerFactory.getLogger(EMobileConnectionGetStatusAndDetails.class);
+	@Autowired
+	private EmobileService emobileService;
+	
+	@GetMapping
+	public ResponseEntity<EMobileResponseDetailsDTO> getDetails(@RequestParam("requestId") Integer requestId)
+			throws Exception {
 		if (requestId == null) {
-			throw new InvalidInputException(
-					ResponseEnum.SVC0005.createResponseMessage("RequestId Id is missing.")); // "project
+			throw new InvalidInputException("RequestId Id is missing."); 
+			
 		}
-		logger.info("Details for project with project id: " + projectId);
+		EMobileResponseDetailsDTO eMobileResponseDetailsDTO = emobileService.getConnectionDetails(requestId);
+		logger.debug("project fetched successfully for id: " + requestId + STATUS_CODE + HttpStatus.OK);
 		
-		logger.debug("project fetched successfully for id: " + projectId + STATUS_CODE + HttpStatus.OK);
-		return new ResponseEntity<>(EMobileResponseDetailsDTO, HttpStatus.OK);
+		return new ResponseEntity<>(eMobileResponseDetailsDTO, HttpStatus.OK);
 
-	}*/
-
-
+	}
 }
